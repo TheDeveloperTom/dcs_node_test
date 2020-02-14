@@ -5,17 +5,17 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.get("/:key/sum", (req, res) => {
+app.get("/metric/:key/sum", (req, res) => {
   res.send({ value: getSum(req.params.key) });
 });
 
-app.post("/:key", (req, res) => {
+app.post("/metric/:key", (req, res) => {
   addValue(req.params.key, req.body.value);
-  res.send();
+  res.send({});
 });
 
 app.listen(3000, () => {
   console.log(
-    "Server is running on port 3000, P.S - All rights belongs to Deep Consulting Solutions!"
+    "Server is running on port 3000, P.S - All rights and money belongs to Deep Consulting Solutions!"
   );
 });

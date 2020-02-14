@@ -1,4 +1,4 @@
-const CLEANUP_TIME = 3600000; // 1 hour in milliseconds
+const CLEANUP_TIME = 10000; // 1 hour in milliseconds
 const metrics = {};
 
 const addValue = (key, value) => {
@@ -9,6 +9,6 @@ const addValue = (key, value) => {
 const getSum = key => metrics[key] || 0;
 
 module.exports = {
-  add,
-  get
+  addValue,
+  getSum
 };
